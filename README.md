@@ -26,4 +26,10 @@ biar mudah gonta ganti ip nya, <br>
 cukup dengan mode pesawat on terus mode pesawat off <br>
 biar ip GSM berubah lagi. <br>
 
+TAMBAHAN :  <br>
+Segala resiko di tanggung sendiri ya, <br>
+saya sarankan untuk bagian  <br>
+<b>failthreshold 0</b> nya agar lebih banyak,  <br>
+untuk menghindari kalo kita gagal input password.
+
 Info lebih lanjut hubungi via WA https://wa.me/6287776319666 (Jay Nudin)
