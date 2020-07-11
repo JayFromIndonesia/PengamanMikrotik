@@ -1,14 +1,21 @@
-
 :local logBuffer "failedauth"
-:local failthreshold 2
-:local blocklist "Lst_AttemptLoginIP"
-:local emailAddress "phalla.ccmt@gmail.com"
-:local emailCC "alertphalla@gmail.com"
-:local GTime [:pick [/system clock get time] 0 8]
+:local failthreshold 0
+:local blocklist "IP_BlackList"
+:local GDate [/system clock get date]
+:local GTime [/system clock get time]
 :local RName [/system identity get name];
-:local Output "Your Router($RName) is attempt login by:"
 
-# ----------------------------------------------------------------------------------------
+# ------- EDIT DISINI -------
+
+:local NoHP "087776319666"
+:local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
+
+# -------- STOP EDIT -------
+
+# -------- DONASI LAYANAN WA GATEWAY -------
+# DANA/OVO = 08777.6319.666
+# A/N = MELLY I.
+# ------------------------------------------
 
 :local attackiparray {0}
 :local attackcountarray {0}
@@ -65,80 +72,9 @@
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
     :set ($attackcountarray->$z) 0
-    /ip firewall address-list add address=($attackiparray->$z) list=$blocklist
-    /tool e-mail send to="$emailAddress" cc="$emailCC" subject="MikroTik alert on $datetime" body="$Output $attackiparray at $GTime. Now it has been add to block list."
-  }
-:set ($attackcountarray->$z) 0
-:set z ($z+1)
-}
-
-:local logBuffer "failedauth"
-:local failthreshold 2
-:local blocklist "Lst_AttemptLoginIP"
-:local emailAddress "phalla.ccmt@gmail.com"
-:local emailCC "phalla.hong@saturn.com.kh"
-:local RName [/system identity get name];
-:local Output "Your Router($RName) is attempt login by: "
-
-# -----------------------------------
-
-:local attackiparray {0}
-:local attackcountarray {0}
-:local logEntryTopics
-:local logEntryTime
-:local logEntryMessage
-:local clearedbuf
-:local lines
-:local datetime [/system clock get date]
-:set clearedbuf 0
-
-:local i 0
-:foreach rule in=[/log print as-value where buffer=($logBuffer)] do={
-# Now all data is collected in memory..
-
-# Clear log buffer right away so new entries come in
-   :if ($clearedbuf = 0) do={
-      /system logging action {
-         :set lines [get ($logBuffer) memory-lines]
-         set ($logBuffer) memory-lines 1
-         set ($logBuffer) memory-lines $lines
-      }
-      :set clearedbuf 1
-   }
-# End clear log buffer
-
-   :set logEntryTime ""
-   :set logEntryTopics ""
-   :set logEntryMessage ""
-
-:set logEntryTime ($rule->"time")
-:set logEntryTopics ($rule->"topics")
-:set logEntryMessage ($rule->"message")
-
-:if ($logEntryMessage~"login failure") do={
-
-:local attackip [:pick $logEntryMessage ([:find $logEntryMessage "from "]+5) ([:find $logEntryMessage " via"])]
-
-:local x 0
-:foreach ip in=$attackiparray do={
-  :if ($ip = $attackip) do={
-    :set ($attackcountarray->$x) (($attackcountarray->$x)+1)
-  } else={
-    :set ($attackiparray->$i) $attackip
-    :set ($attackcountarray->$i) 1
-  }
-:set x ($x+1)
-}
-}
-:set i ($i+1)
-# end foreach rule
-}
-:local z 0
-:foreach ip in=$attackiparray do={
-  :if ($attackcountarray->$z > $failthreshold) do={
-    :set ($attackcountarray->$z) 0
-    /ip firewall address-list add address=($attackiparray->$z) list=$blocklist
-    /tool e-mail send to="$emailAddress" cc="$emailCC" subject="MikroTik alert on $datetime" body="$Output $attackiparray"
+/tool fetch url="https://mikbotam-online.my.id/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
+    /ip firewall address-list add address=($attackiparray->$z) list=$blocklist comment="Create at $GDate $GTime"
+    
   }
 :set ($attackcountarray->$z) 0
 :set z ($z+1)
