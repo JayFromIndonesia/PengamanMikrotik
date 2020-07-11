@@ -8,17 +8,17 @@ Buka file Konfigurasi <br>
 Copy paste ke terminal mikrotik.
 
 Kedua : <br>
+Copy Paste script ini ke terminal mikrotik <br>
+/ip firewall filter add action=drop chain=input comment="Drop Attempt Login User" disabled=no src-address-list=IP_BlackList
+
+Ketiga : <br>
 Buka Mikrotik <br>
 => System => Scheduler  <br>
 Tambah Schedule baru (CekUserGagalLogin) <br>
 Sesuaikan interval nya, rekomendasi per 5 menit. <br>
 Buka file CekUserGagalLogin <br>
 Copy Paste ke Source pada CekUserGagalLogin <br>
-Apply/simpan <br>
-
-Ketiga : <br>
-Copy Paste script ini ke terminal mikrotik <br>
-/ip firewall filter add action=drop chain=input comment="Drop Attempt Login User" disabled=no src-address-list=IP_BlackList
+Apply/simpan
 
 KeEmpat : <br>
 Silakan test pakai IP GSM, <br>
