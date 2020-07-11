@@ -8,7 +8,7 @@ Copy paste ke terminal mikrotik.
 
 Kedua :
 Buka Mikrotik
-> System > Scheduler 
+=> System => Scheduler 
 Tambah Schedule baru (CekUserGagalLogin)
 Sesuaikan interval nya, rekomendasi per 5 menit.
 Buka file CekUserGagalLogin
