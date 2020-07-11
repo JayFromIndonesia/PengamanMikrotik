@@ -1,0 +1,8 @@
+Konfigurasi:
+
+- Add Logging Rule :
+===== Copy Paste dari sini =====
+/system logging action add name=failedauth target=memory
+
+/system logging add action=failedauth topics=critical,system,error
+===== Selesai =====
