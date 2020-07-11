@@ -7,6 +7,11 @@
 
 # ------- EDIT DISINI -------
 
+# failthreshold 0 ==>> Jika Gagal 1x (silakan sesuaikan)
+# failthreshold 2 ==>> Jika Gagal 3x (silakan sesuaikan)
+# failthreshold 4 ==>> Jika Gagal 5x (silakan sesuaikan)
+
+:local failthreshold 0
 :local NoHP "087776319666"
 :local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
 
