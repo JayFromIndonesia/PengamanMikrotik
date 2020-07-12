@@ -5,11 +5,16 @@
 :local GTime [/system clock get time]
 :local RName [/system identity get name];
 
-# ------- EDIT DISINI -------
+# ------- NOTES -------
+# Silakan di sesuaikan ya
+# failthreshold 0 ==>> Jika Gagal Login 1x ip akan di block
+# failthreshold 2 ==>> Jika Gagal Login 3x ip akan di block
+# failthreshold 4 ==>> Jika Gagal Login 5x ip akan di block
+# failthreshold 9 ==>> Jika Gagal Login 10x ip akan di block
+# Rekomendasi di isi angka 9 untuk menghindari salah input password
+# ------------------------------------------
 
-# failthreshold 0 ==>> Jika Gagal 1x (silakan sesuaikan)
-# failthreshold 2 ==>> Jika Gagal 3x (silakan sesuaikan)
-# failthreshold 4 ==>> Jika Gagal 5x (silakan sesuaikan)
+# ------- EDIT CONFIG DI BAWAH -------
 
 :local failthreshold 0
 :local NoHP "087776319666"
