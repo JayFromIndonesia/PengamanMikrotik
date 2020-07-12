@@ -1,5 +1,4 @@
 :local logBuffer "failedauth"
-:local failthreshold 0
 :local blocklist "IP_BlackList"
 :local GDate [/system clock get date]
 :local GTime [/system clock get time]
