@@ -15,10 +15,10 @@ Copy Paste script ini ke terminal mikrotik <br>
 Ketiga : <br>
 Buka Mikrotik <br>
 => System => Scheduler  <br>
-Tambah Schedule baru (CekUserGagalLogin) <br>
+Tambah Schedule baru, name = CEK-IP-NAKAL <br>
 Sesuaikan interval nya, rekomendasi per 5 menit. <br>
-Buka file CekUserGagalLogin <br>
-Copy Paste ke Source pada CekUserGagalLogin <br>
+Buka file SCH-IP-NAKAL.txt <br>
+Copy Paste ke Source pada CEK-IP-NAKAL <br>
 Apply/simpan
 
 KeEmpat : <br>
