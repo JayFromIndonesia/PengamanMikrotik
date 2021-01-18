@@ -4,8 +4,9 @@ Mengamankan Mikrotik dari serangan luar pakai ip publik.
 BruteForces, DDOS, Dll.
 
 Pertama : <br>
-Buka file Konfigurasi <br>
-Copy paste ke terminal mikrotik.
+Copy Paste script ini ke terminal mikrotik <br>
+/system logging action add name=failedauth target=memory
+/system logging add action=failedauth topics=critical,system,error
 
 Kedua : <br>
 Copy Paste script ini ke terminal mikrotik <br>
