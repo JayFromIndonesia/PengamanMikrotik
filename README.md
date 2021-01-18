@@ -5,7 +5,7 @@ BruteForces, DDOS, Dll.
 
 Pertama : <br>
 Copy Paste script ini ke terminal mikrotik <br>
-/system logging action add name=failedauth target=memory
+/system logging action add name=failedauth target=memory <br>
 /system logging add action=failedauth topics=critical,system,error
 
 Kedua : <br>
