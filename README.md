@@ -10,15 +10,15 @@ Copy Paste script ini ke terminal mikrotik <br>
 
 Kedua : <br>
 Copy Paste script ini ke terminal mikrotik <br>
-/ip firewall filter add action=drop chain=input comment="Drop Attempt Login User" disabled=no src-address-list=IP_BlackList
+/ip firewall filter add action=drop chain=input comment="Drop Attempt Login User" disabled=no src-address-list="IP-DDOS-BLOCKED"
 
 Ketiga : <br>
 Buka Mikrotik <br>
 => System => Scheduler  <br>
-Tambah Schedule baru, name = CEK-IP-NAKAL <br>
+Tambah Schedule baru, name = IP-DDOS-BLOCKED <br>
 Sesuaikan interval nya, rekomendasi per 5 menit. <br>
-Buka file SCH-IP-NAKAL.txt <br>
-Copy Paste ke Source pada CEK-IP-NAKAL <br>
+Buka file SCHEDULER-IP-DDOS.txt <br>
+Copy Paste ke Source pada SCHEDULER-IP-DDOS <br>
 Apply/simpan
 
 KeEmpat : <br>
