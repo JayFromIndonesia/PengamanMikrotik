@@ -1,8 +1,14 @@
 :local logBuffer "failedauth"
-:local blocklist "IP_BlackList"
+:local blocklist "IP-DDOS-BLOCKED"
 :local GDate [/system clock get date]
 :local GTime [/system clock get time]
 :local RName [/system identity get name];
+
+# ------- EDIT KONFIGURASI DI BAWAH -------
+:local failthreshold 2
+:local NoHP "6287776319666"
+:local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
+# -------- STOP EDIT -------
 
 # ------- NOTES -------
 # Silakan di sesuaikan ya
@@ -10,20 +16,12 @@
 # failthreshold 2 ==>> Jika Gagal Login 3x ip akan di block
 # failthreshold 4 ==>> Jika Gagal Login 5x ip akan di block
 # failthreshold 9 ==>> Jika Gagal Login 10x ip akan di block
-# Rekomendasi di isi angka 9 untuk menghindari salah input password
+# Rekomendasi di isi angka 4 untuk menghindari salah input password
 # ------------------------------------------
 
-# ------- EDIT CONFIG DI BAWAH -------
-
-:local failthreshold 0
-:local NoHP "087776319666"
-:local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
-
-# -------- STOP EDIT -------
-
 # -------- DONASI LAYANAN WA GATEWAY -------
-# DANA/OVO = 08777.6319.666
-# A/N = MELLY I.
+# DANA/OVO = 087776319666
+# A/N = MELLY INDRIYANI
 # ------------------------------------------
 
 :local attackiparray {0}
@@ -81,7 +79,7 @@
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
     :set ($attackcountarray->$z) 0
-/tool fetch url="https://mikbotam-online.my.id/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
+/tool fetch url="https://bot.billingku.net/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
     /ip firewall address-list add address=($attackiparray->$z) list=$blocklist comment="Create at $GDate $GTime"
     
   }
