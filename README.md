@@ -36,4 +36,4 @@ saya sarankan untuk bagian  <br>
 <b>failthreshold 0</b> nya agar lebih banyak,  <br>
 untuk menghindari kalo kita gagal input password.
 
-Info lebih lanjut hubungi via WA https://wa.me/6287776319666 (Jay Nudin)
+Info lebih lanjut hubungi via WA https://wa.me/6281914005555 (RADITEK GROUP)
