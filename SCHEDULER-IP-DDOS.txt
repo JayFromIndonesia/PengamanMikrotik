@@ -87,7 +87,6 @@
 :global urlEncode
 :local URLoriginal "https://api.raditek.co.id/BlockUserNakal.php?phone=$NoWA&router";
 
-
 :local z 0
 :local result [$urlEncode $original];
 :foreach ip in=$attackiparray do={
