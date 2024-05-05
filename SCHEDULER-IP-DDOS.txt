@@ -85,7 +85,7 @@
 :set logEntryTime ($rule->"time")
 :set logEntryTopics ($rule->"topics")
 :set logEntryMessage ($rule->"message")
-:local result [$urlEncode $original];
+
 :if ($logEntryMessage~"login failure") do={
 
 :local attackip [:pick $logEntryMessage ([:find $logEntryMessage "from "]+5) ([:find $logEntryMessage " via"])]
@@ -103,9 +103,10 @@
 }
 :set i ($i+1)
 # end foreach rule
-}
 :local URLoriginal "https://api.raditek.co.id/BlockUserNakal.php?phone=$NoWA&router";
+}
 
+:local result [$urlEncode $original];
 :local z 0
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
