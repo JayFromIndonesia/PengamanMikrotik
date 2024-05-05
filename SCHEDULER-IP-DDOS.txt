@@ -1,14 +1,14 @@
 :local logBuffer "failedauth"
 :local blocklist "IP-DDOS-BLOCKED"
-:local timezone "Asia/Jakarta"
 :local GDate [/system clock get date]
 :local GTime [/system clock get time]
 :local RName [/system identity get name];
 
 # ------- EDIT KONFIGURASI DI BAWAH -------
 :local failthreshold 2
-:local NoHP "6283148752220"
-:local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
+:local NoWA "6283148752220"
+:local timezone "Asia/Jakarta"
+:local Pesan "IP Berhasil Di BLOCKED.";
 # -------- STOP EDIT -------
 
 # ------- NOTES -------
@@ -80,7 +80,7 @@
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
     :set ($attackcountarray->$z) 0
-/tool fetch url="https://api.raditek.co.id/BlockUserNakal.php?nohp=$NoHP&router=urlencode($RName)&ip=urlencode($attackiparray)&tgl=urlencode($GDate)&jam=urlencode($GTime)&detail=urlencode($Pesan)&timezone=urlencode($timezone)" keep-result=no;
+/tool fetch url="https://api.raditek.co.id/BlockUserNakal.php?phone=$NoWA&router=urlencode($RName)&ip=urlencode($attackiparray)&tgl=urlencode($GDate)&jam=urlencode($GTime)&detail=urlencode($Pesan)&timezone=urlencode($timezone)" keep-result=no;
     /ip firewall address-list add address=($attackiparray->$z) list=$blocklist comment="Create at $GDate $GTime"
     
   }
