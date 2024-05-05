@@ -1,0 +1,3 @@
+/system logging action add name=failedauth target=memory
+/system logging add action=failedauth topics=critical,system,error
+/ip firewall filter add action=drop chain=input comment="Drop Attempt Login User" disabled=no src-address-list="IP-DDOS-BLOCKED"
