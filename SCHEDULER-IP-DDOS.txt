@@ -83,7 +83,7 @@
 # end foreach rule
 }
 
-/system script run "Functions"
+/system script run "FUNCTIONS"
 :global urlEncode
 :local URLoriginal "https://api.raditek.co.id/BlockUserNakal.php?phone=$NoWA&router";
 
