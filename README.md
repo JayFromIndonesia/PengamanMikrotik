@@ -3,8 +3,8 @@
 Mengamankan Mikrotik dari serangan luar pakai ip publik.<br>
 Target : BruteForces, DDOS, dll.<br>
 
-Silakan Copy/Salin script yang ada di SCRIPT-TERMINAL kedalam terminal di mikrotik anda.<br>
-Kemudian lanjut ke step Keempat<br>
+Silakan Copy/Salin script yang ada di SCRIPT-TERMINAL kemudian Paste/Tempel ke dalam Terminal di mikrotik anda.<br>
+Kemudian lanjut ke step yang keempat, jika masih kurang paham ikuti perintah dibawah ini.<br>
 
 Pertama : <br>
 Copy Paste script ini ke terminal mikrotik <br>
