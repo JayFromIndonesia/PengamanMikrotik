@@ -79,7 +79,7 @@
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
     :set ($attackcountarray->$z) 0
-/tool fetch url="https://api.raditek.co.id/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
+/tool fetch url="https://api.raditek.co.id/BlockUserNakal.php?nohp=$NoHP&router=urlencode($RName)&ip=urlencode($attackiparray)&tgl=urlencode($GDate)&jam=urlencode($GTime)&detail=urlencode($Pesan)" keep-result=no;
     /ip firewall address-list add address=($attackiparray->$z) list=$blocklist comment="Create at $GDate $GTime"
     
   }
