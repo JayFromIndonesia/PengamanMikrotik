@@ -1,7 +1,10 @@
 # PengamanMikrotik
 
-Mengamankan Mikrotik dari serangan luar pakai ip publik.
-BruteForces, DDOS, Dll.
+Mengamankan Mikrotik dari serangan luar pakai ip publik.<br>
+Target : BruteForces, DDOS, dll.<br>
+
+Silakan Copy/Salin script yang ada di SCRIPT-TERMINAL kedalam terminal di mikrotik anda.<br>
+Kemudian lanjut ke step Keempat<br>
 
 Pertama : <br>
 Copy Paste script ini ke terminal mikrotik <br>
@@ -21,7 +24,7 @@ Buka file SCHEDULER-IP-DDOS.txt <br>
 Copy Paste ke Source pada SCHEDULER-IP-DDOS <br>
 Apply/simpan
 
-KeEmpat : <br>
+Keempat : <br>
 Silakan test pakai IP GSM, <br>
 biar mudah gonta ganti ip nya, <br>
 cukup dengan mode pesawat on terus mode pesawat off <br>
