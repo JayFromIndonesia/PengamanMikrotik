@@ -1,5 +1,6 @@
 :local logBuffer "failedauth"
 :local blocklist "IP-DDOS-BLOCKED"
+:local timezone "Asia/Jakarta"
 :local GDate [/system clock get date]
 :local GTime [/system clock get time]
 :local RName [/system identity get name];
