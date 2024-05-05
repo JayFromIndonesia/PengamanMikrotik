@@ -6,7 +6,7 @@
 
 # ------- EDIT KONFIGURASI DI BAWAH -------
 :local failthreshold 2
-:local NoHP "6287776319666"
+:local NoHP "6283148752220"
 :local Pesan "IP%20Berhasil%20Di%20BLOCKED.";
 # -------- STOP EDIT -------
 
@@ -20,8 +20,8 @@
 # ------------------------------------------
 
 # -------- DONASI LAYANAN WA GATEWAY -------
-# DANA/OVO = 087776319666
-# A/N = MELLY INDRIYANI
+# DANA/OVO = 083148752220
+# A/N = JAENUDIN
 # ------------------------------------------
 
 :local attackiparray {0}
@@ -79,7 +79,7 @@
 :foreach ip in=$attackiparray do={
   :if ($attackcountarray->$z > $failthreshold) do={
     :set ($attackcountarray->$z) 0
-/tool fetch url="https://bot.billingku.net/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
+/tool fetch url="https://api.raditek.co.id/BlockUserNakal.php?nohp=$NoHP&router=$RName&ip=$attackiparray&tgl=$GDate&jam=$GTime&detail=$Pesan" keep-result=no;
     /ip firewall address-list add address=($attackiparray->$z) list=$blocklist comment="Create at $GDate $GTime"
     
   }
