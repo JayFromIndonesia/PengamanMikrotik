@@ -18,6 +18,11 @@
 # failthreshold 4 ==>> Jika Gagal Login 5x ip akan di block
 # failthreshold 9 ==>> Jika Gagal Login 10x ip akan di block
 # Rekomendasi di isi angka 4 untuk menghindari salah input password
+#
+# Timezone Indonesia
+# Asia/Jakarta === WIB
+# Asia/Makassar === WITA
+# Asia/Jayapura === WIT
 # ------------------------------------------
 
 # -------- DONASI LAYANAN WA GATEWAY -------
