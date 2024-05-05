@@ -1,0 +1,20 @@
+:global urlEncode do={
+  :local output ""
+  :local input [:toarray $1]
+  :if ([:len $input] > 0) do={
+    :local input1 [:tostr [:pick $input 0]]
+    :for i from=0 to=([:len $input1] - 1) do={ 
+      :local char [:pick $input1 $i]
+      :local conversion {" "="%20";"-"="%2D";":"="%3A";"_"="%5F"}
+      :foreach old,new in=$conversion do={
+        :if ($char=$old) do={
+          :set $char $new;
+        }
+      }
+      :set output ($output . $char)
+    }
+    :set output [:tostr $output]
+    :set output [:toarray $output]
+  }
+  :return $output
+}
